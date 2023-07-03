@@ -8,13 +8,12 @@ class Document(BaseModel):
 
 def inference(prompt:str)->list:
     openai.organization = "org-iq062ID6BVE1ixIS9w2FuMJM"
-    openai.api_key = "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"
+    openai.api_key = "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"
     print('[PROCESANDO]'.center(40, '-'))
     completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": """Eres un profesor de programacion para niños, genera una explicacion para el tema que se te proporciona
-        E.G: Programación
         -Es como armar un rompecabezas donde cada pieza forma el sistema completo"""},
             {"role": "user", "content": prompt}
         ]
